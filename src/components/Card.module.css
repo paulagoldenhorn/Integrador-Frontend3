@@ -16,7 +16,7 @@
     background-color: ghostwhite;
     transition: all ease 0.3s;
     border-radius: 15px;
-    cursor: pointer;
+    /* cursor: pointer; */
     position: relative;
     vertical-align:middle;
 }

@@ -14,9 +14,9 @@ Rutas:
     - Detail
         - Card
 - ```/contact```
-    - Form
+    - Contact
         - ContactForm
-        - ErrorFilter
+        - ErrorHandler
 - ```/favs```
     - Favs
         - Card
@@ -31,7 +31,7 @@ Componentes:
 - ```Home:``` página principal. Obtiene datos de los dentistas a través de la API y renderiza Card.
 - ```Card:``` información de los dentistas. Recibe los datos del dentista y los renderiza en el formato establecido.
 - ```Detail:``` página de detalle. Obtiene datos del dentista seleccionado a través de la API y renderiza Card.
-- ```Form:``` página de contacto. Renderiza ContactForm
+- ```Contact:``` página de contacto. Renderiza ContactForm
 - ```ContactForm:``` formulario de contacto. Muestra un formulario, captura los datos ingresados y renderiza ErrorFilter
-- ```ErrorFilter:``` mensajes de error. Muestra mensajes de error de los datos enviados (si los hubiese).
+- ```ErrorHandler:``` manejador de errores. Muestra los mensajes de error en los datos enviados. En caso contrario, muestra el mensaje de éxito correspondiente.
 - ```Favs:``` página de dentistas favoritos. Obtiene dentistas favoritos a través del Local Storage y renderiza Card

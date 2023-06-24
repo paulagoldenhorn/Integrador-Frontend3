@@ -13,14 +13,16 @@ function Card(props) {
   return (
     <section className={styles.section}>
       {dentists.map((dentist) => (
-        <div key={dentist.id} className={styles.card} onClick={() => handleNavigate(dentist.id)}>
-          <h4>{dentist.name}</h4>
-          <p>{dentist.email}</p>
-          <p>{dentist.phone}</p>
-          <p>{dentist.website}</p>
-          <button>Like</button>
-        </div>
-      ))}
+          <div key={dentist.id} className={styles.card}>
+            <h4>{dentist.name}</h4>
+            <p>@{dentist.username.toLowerCase()}</p>
+            <button onClick={() => dentist.onFav(dentist)}>Like</button>
+            <button onClick={() => handleNavigate(dentist.id)}>
+              Contactar
+            </button>
+          </div>
+        ))
+      }
     </section>
   )
 }
