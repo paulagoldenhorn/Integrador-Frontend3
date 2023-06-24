@@ -1,0 +1,18 @@
+.navbar {
+    background-color:aliceblue;
+    display: flex;
+    font-size: 20px;
+    gap: 15px;
+    justify-content: center;
+    position: relative;
+    padding: 10px;
+}
+
+.navbar a {
+    color: black;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: slateblue
+}
