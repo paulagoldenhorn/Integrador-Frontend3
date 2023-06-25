@@ -1,6 +1,7 @@
 import { Routes, Route, Outlet } from 'react-router-dom'
 import './App.css'
 import { ApiContextProvider } from './context/ApiContextProvider'
+import { ThemeContextProvider } from './context/ThemeContextProvider'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './routes/Home'
@@ -16,11 +17,13 @@ function App() {
           path='/'
           element={
             <>
+            <ThemeContextProvider>
               <ApiContextProvider>
                 <Navbar />
                 <Outlet />
                 <Footer />
               </ApiContextProvider>
+            </ThemeContextProvider>
             </>
           }
         >

@@ -26,9 +26,13 @@
     border: 0.2px solid slateblue;
 }
 
+.card button .like {
+    color: red;
+}  
+
 .card button {
     border-radius: 8px;
-    border: 1px solid transparent;
+    border: 1px solid;
     padding: 0.3em 0.6em;
     margin: 0.5rem;
     font-size: 1em;
@@ -39,3 +43,4 @@
     cursor: pointer;
     transition: border-color 0.25s;
   }
+ 
