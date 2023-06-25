@@ -2,12 +2,13 @@ import { Routes, Route, Outlet } from 'react-router-dom'
 import './App.css'
 import { ApiContextProvider } from './context/ApiContextProvider'
 import { ThemeContextProvider } from './context/ThemeContextProvider'
+import { FavsLogicContextProvider } from './context/FavsLogicContextProvider'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './routes/Home'
-import Detail from './routes/Detail';
-import Contact from './routes/Contact';
-
+import Detail from './routes/Detail'
+import Contact from './routes/Contact'
+import Favs from './routes/Favs'
 
 function App() {
   return (
@@ -17,20 +18,22 @@ function App() {
           path='/'
           element={
             <>
-            <ThemeContextProvider>
-              <ApiContextProvider>
+              <ThemeContextProvider>
                 <Navbar />
-                <Outlet />
+                <ApiContextProvider>
+                  <FavsLogicContextProvider>
+                    <Outlet />
+                  </FavsLogicContextProvider>
+                </ApiContextProvider>
                 <Footer />
-              </ApiContextProvider>
-            </ThemeContextProvider>
+              </ThemeContextProvider>
             </>
           }
         >
           <Route path='/home' element={<Home />} />
           <Route path='/dentist/:id' element={<Detail />} />
           <Route path='/contact' element={<Contact />} />
-          <Route path='/favs' element={<p>favs</p>} />
+          <Route path='/favs' element={<Favs />} />
         </Route>
       </Routes>
     </>

@@ -13,10 +13,10 @@
 .card {
     padding: 16px;
     border: 1.5px solid grey;
+    color: black;
     background-color: ghostwhite;
     transition: all ease 0.3s;
     border-radius: 15px;
-    /* cursor: pointer; */
     position: relative;
     vertical-align:middle;
 }
@@ -26,11 +26,28 @@
     border: 0.2px solid slateblue;
 }
 
-.card button .like {
+.card_dark {
+    padding: 16px;
+    border: 1.5px solid grey;
+    color: white;
+    background-color: rgb(35, 35, 37);
+    transition: all ease 0.3s;
+    border-radius: 15px;
+    position: relative;
+    vertical-align:middle;
+}
+
+.card_dark:hover {
+    box-shadow: 0px 0px 45px -10px slateblue;
+    border: 0.2px solid slateblue;
+}
+
+.like {
     color: red;
+    background-color: transparent;
 }  
 
-.card button {
+button {
     border-radius: 8px;
     border: 1px solid;
     padding: 0.3em 0.6em;
@@ -43,4 +60,3 @@
     cursor: pointer;
     transition: border-color 0.25s;
   }
- 

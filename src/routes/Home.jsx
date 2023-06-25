@@ -1,15 +1,14 @@
 import { useContext, useEffect, useState } from 'react'
 import Card from '../components/Card'
 import { ApiContext } from '../context/ApiContextProvider'
+import { FavsLogicContext } from '../context/FavsLogicContextProvider'
 
 function Home() {
   const { apiData } = useContext(ApiContext)
+  const { addToFavs } = useContext(FavsLogicContext)
 
   const [cardData, setCardData] = useState([])
-  const [favs, setFavs] = useState(
-    JSON.parse(localStorage.getItem('favDentists') || '[]')
-  )
-
+  
   function handleCardData() {
     setCardData(
       apiData.map((dentist) => ({
@@ -20,17 +19,6 @@ function Home() {
     )
   }
 
-  const addToFavs = (dentist) => {
-    let newFavs
-    if (favs.some(favDentist => favDentist.id === dentist.id)) {
-      newFavs = favs.filter(favDentist => favDentist.id !== dentist.id)
-    } else {
-      newFavs = [...favs, dentist]
-    }
-    setFavs(newFavs)
-    localStorage.setItem('favDentists', JSON.stringify(newFavs))
-  }
-
   useEffect(() => {
     handleCardData()
   }, [apiData])
@@ -38,7 +26,7 @@ function Home() {
   return (
     <main>
       <h1>Nuestros dentistas</h1>
-      <Card data={cardData} onClick={addToFavs} />     
+      <Card data={cardData} onClick={addToFavs} onRouteFavs={false} />     
     </main>
   )
 }
