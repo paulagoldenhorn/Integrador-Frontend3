@@ -4,7 +4,7 @@ function ContactForm() {
   const [fullname, setFullName] = useState('')
   const [email, setEmail] = useState('')
   const [error, setError] = useState('')
-  const [success, setSucces] = useState('')
+  const [success, setSucces] = useState(false)
 
   function hasErrors() {
     if (fullname.trim().length < 5) {
@@ -12,7 +12,7 @@ function ContactForm() {
       return true
     }
     const validEmail = new RegExp(
-      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)+$/
     )
     if (!validEmail.test(email.trim())) {
       setError('El formato de correo es incorrecto')
@@ -23,18 +23,16 @@ function ContactForm() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    setError('')
-    setSucces('')
+    setError(false)
+    setSucces(false)
     if (hasErrors()) return
-    setSucces(`
-    Gracias ${fullname}, te contactaremos cuanto antes via email al correo ${email}
-  `)
+    setSucces({ fullname, email })
     setFullName('')
     setEmail('')
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} noValidate>
       <label htmlFor='fullname'>Nombre completo: </label>
       <input
         type='text'
@@ -48,8 +46,16 @@ function ContactForm() {
         onChange={(e) => setEmail(e.target.value.toLocaleLowerCase())}
       />
       <button type='submit'>Contácteme</button>
+
       {error && <p>{error}</p>}
-      {success && <p>{success}</p>}
+      {success && (
+        <p>
+          Gracias <span style={{ textTransform: 'capitalize' }}>
+            {success.fullname}
+          </span>
+          , te escribiremos a la dirección {success.email}
+        </p>
+      )}
     </form>
   )
 }

@@ -1,5 +1,4 @@
 import { createContext, useState } from 'react'
-import './ThemeContextProvider.css'
 
 export const ThemeContext = createContext({})
 
@@ -7,8 +6,7 @@ export const ThemeContextProvider = (props) => {
   const [theme, setTheme] = useState('light')
 
   function changeTheme() {
-    if (theme === 'light') setTheme('dark')
-    if (theme === 'dark') setTheme('light')
+    setTheme(theme === 'light' ? 'dark' : 'light');
   }
 
   const value = {

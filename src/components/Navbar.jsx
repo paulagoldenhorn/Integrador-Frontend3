@@ -7,23 +7,16 @@ function Navbar() {
   const { theme, changeTheme } = useContext(ThemeContext)
 
   return (
-    <>
-      {theme === 'dark' ? (
-        <nav className={styles.navbar_dark}>
-          <Link to='/home'>Home</Link>
-          <Link to='/favs'>Favoritos</Link>
-          <Link to='/contact'>Contacto</Link>
-          <button onClick={changeTheme}>🌙</button>
-        </nav>
+    <nav className={styles[theme]}>
+      <Link to='/'>Home</Link>
+      <Link to='/favs'>Favoritos</Link>
+      <Link to='/contact'>Contacto</Link>
+      {theme === 'light' ? (
+        <button onClick={changeTheme}>☀️</button>
       ) : (
-        <nav className={styles.navbar}>
-          <Link to='/home'>Home</Link>
-          <Link to='/favs'>Favoritos</Link>
-          <Link to='/contact'>Contacto</Link>
-          <button onClick={changeTheme}>☀️</button>
-        </nav>
+        <button onClick={changeTheme}>🌙</button>
       )}
-    </>
+    </nav>
   )
 }
 export default Navbar

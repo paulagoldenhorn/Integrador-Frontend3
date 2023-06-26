@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useMemo, useState } from 'react'
 import Card from '../components/Card'
 import { ApiContext } from '../context/ApiContextProvider'
 import { FavsLogicContext } from '../context/FavsLogicContextProvider'
@@ -9,7 +9,7 @@ function Home() {
 
   const [cardData, setCardData] = useState([])
   
-  function handleCardData() {
+  useMemo(() => {
     setCardData(
       apiData.map((dentist) => ({
         id: dentist.id,
@@ -17,16 +17,12 @@ function Home() {
         username: dentist.username,
       }))
     )
-  }
-
-  useEffect(() => {
-    handleCardData()
   }, [apiData])
 
   return (
     <main>
       <h1>Nuestros dentistas</h1>
-      <Card data={cardData} onClick={addToFavs} onRouteFavs={false} />     
+      <Card data={cardData} onClick={addToFavs} />     
     </main>
   )
 }

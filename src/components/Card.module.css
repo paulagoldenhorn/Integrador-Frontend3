@@ -10,7 +10,7 @@
 
 }
 
-.card {
+.light {
     padding: 16px;
     border: 1.5px solid grey;
     color: black;
@@ -21,12 +21,12 @@
     vertical-align:middle;
 }
 
-.card:hover {
+.light:hover {
     box-shadow: 0px 0px 45px -10px slateblue;
     border: 0.2px solid slateblue;
 }
 
-.card_dark {
+.dark {
     padding: 16px;
     border: 1.5px solid grey;
     color: white;
@@ -37,7 +37,7 @@
     vertical-align:middle;
 }
 
-.card_dark:hover {
+.dark:hover {
     box-shadow: 0px 0px 45px -10px slateblue;
     border: 0.2px solid slateblue;
 }

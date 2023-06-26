@@ -1,4 +1,4 @@
-.navbar {
+.light {
     background-color:aliceblue;
     display: flex;
     font-size: 20px;
@@ -9,7 +9,7 @@
     padding: 10px;
 }
 
-.navbar a {
+.light a {
     color: black;
     text-decoration: none;
 }
@@ -18,17 +18,18 @@ a:hover {
     color: slateblue
 }
 
-.navbar_dark {
+.dark {
     background-color: rgb(17, 18, 34);
     display: flex;
     font-size: 20px;
     gap: 15px;
     justify-content: center;
+    align-items: center;
     position: relative;
     padding: 10px;
 }
 
-.navbar_dark a {
+.dark a {
     color: white;
     text-decoration: none;
 }

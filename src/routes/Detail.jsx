@@ -16,16 +16,16 @@ function Detail() {
   }, [params.id])
 
   return (
-    <>
+    <main>
       {apiData && (
-        <div>
+        <>
           <h3>{apiData.name}</h3>
           <p>Correo: {apiData.email}</p>
           <p>Contacto: {apiData.phone}</p>
           <p>Web: {apiData.website}</p>
-        </div>
+        </>
       )}
-    </>
+    </main>
   )
 }
 export default Detail

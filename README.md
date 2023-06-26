@@ -1,13 +1,23 @@
 # Integrador-Frontend3
 Examen Final de Frontend III
 
+# Solucionar
+
+### LOGICA
+- useReducer ?
+- El tema cambia cuando recargo la pag
+### CSS
+- Boton like (que no vuelva a violeta cuando recargo la pagina)
+- Footer volador
+- Mejorar inconsistencias, nombres y optimizar (hay duplicacion de codigo)
+
 # Documentación
 
 Rutas:
 - ```/*```
     - Navbar
     - Footer
-- ```home```
+- ```/```
     - Home
         - Card
 - ```/dentist/:id```
