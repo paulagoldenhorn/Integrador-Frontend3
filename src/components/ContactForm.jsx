@@ -1,5 +1,5 @@
 import { useState, useReducer } from 'react'
-import './ContactForm.module.css'
+import styles from './ContactForm.module.css'
 
 function ContactForm() {
   /*
@@ -62,12 +62,10 @@ function ContactForm() {
         onChange={(e) => setEmail(e.target.value.toLocaleLowerCase())}
       />
       <button type='submit'>Contácteme</button>
-      {error && <p>{error}</p>}
+      {error && <p className={styles.error}>{error}</p>}
       {success && (
-        <p>
-          Gracias <span style={{ textTransform: 'capitalize' }}>
-            {success.fullname}
-          </span>
+        <p className={styles.success}>
+          Gracias <span>{success.fullname}</span>
           , te escribiremos a la dirección {success.email}
         </p>
       )}

@@ -5,3 +5,16 @@ form {
     align-items: center;
     gap: 10px;
 }
+span {
+    text-transform: capitalize;
+}
+.error {
+    background-color: rgb(255, 219, 219);
+    padding: 0.5rem;
+    color: red;
+}
+.success {
+    background-color: rgb(220, 255, 219);
+    padding: 0.5rem;
+    color: green;
+}
