@@ -1,5 +1,6 @@
-import { useContext, useMemo, useState } from 'react'
+import { useContext } from 'react'
 import Card from '../components/Card'
+import styles from '../components/Card.module.css'
 import { ApiContext } from '../context/ApiContextProvider'
 import { FavsLogicContext } from '../context/FavsLogicContextProvider'
 
@@ -7,22 +8,20 @@ function Home() {
   const { apiData } = useContext(ApiContext)
   const { addToFavs } = useContext(FavsLogicContext)
 
-  const [cardData, setCardData] = useState([])
-  
-  useMemo(() => {
-    setCardData(
-      apiData.map((dentist) => ({
-        id: dentist.id,
-        name: dentist.name,
-        username: dentist.username,
-      }))
-    )
-  }, [apiData])
-
   return (
     <main>
       <h1>Nuestros dentistas</h1>
-      <Card data={cardData} onClick={addToFavs} />     
+      <section className={styles.section}>
+        {apiData.map((dentist) => (
+          <Card
+            key={dentist.id}
+            id={dentist.id}
+            name={dentist.name}
+            username={dentist.username}
+            onClick={() => addToFavs(dentist)}
+          />
+        ))}
+      </section>
     </main>
   )
 }

@@ -1,6 +1,20 @@
-import { useState } from 'react'
+import { useState, useReducer } from 'react'
 
 function ContactForm() {
+
+  /*
+  const [state, dispatch] = useReducer(reducer, initialArg, init);
+  dispatch({ type: "tipoDeAccion", payload: "algunValor" });
+  switch (action.type) {
+    case 'fullname':
+    return {count: e.target.value};
+    case 'decrement':
+    return {count: state.count - 1};
+    default:
+    throw new Error();
+  
+  onClick={() => dispatch({type: 'fullname'})}
+*/
   const [fullname, setFullName] = useState('')
   const [email, setEmail] = useState('')
   const [error, setError] = useState('')

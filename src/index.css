@@ -5,6 +5,10 @@
   text-align: center;
 }
 
+main {
+  min-height: calc(100vh - 108px)
+}
+
 input {
   text-align: left;
 }
