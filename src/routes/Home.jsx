@@ -1,6 +1,5 @@
 import { useContext } from 'react'
 import Card from '../components/Card'
-import styles from '../components/Card.module.css'
 import { ApiContext } from '../context/ApiContextProvider'
 import { FavsLogicContext } from '../context/FavsLogicContextProvider'
 
@@ -11,14 +10,14 @@ function Home() {
   return (
     <main>
       <h1>Nuestros dentistas</h1>
-      <section className={styles.section}>
+      <section className='section'>
         {apiData.map((dentist) => (
           <Card
             key={dentist.id}
             id={dentist.id}
             name={dentist.name}
             username={dentist.username}
-            onClick={() => addToFavs(dentist)}
+            onAddToFavs={() => addToFavs(dentist)}
           />
         ))}
       </section>

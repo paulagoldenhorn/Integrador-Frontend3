@@ -4,13 +4,14 @@ import styles from './Card.module.css'
 import { ThemeContext } from '../context/ThemeContextProvider'
 import { FavsLogicContext } from '../context/FavsLogicContextProvider'
 
-function Card({ id, name, username, onClick }) {
+function Card(props) {
+  const { id, name, username, onAddToFavs } = props
   const { theme } = useContext(ThemeContext)
   const { favs } = useContext(FavsLogicContext)
   const navigate = useNavigate()
-  
+
   const isFav = useMemo(() => {
-    return favs.some(favDentist => favDentist.id === id)
+    return favs.some((favDentist) => favDentist.id === id)
   }, [favs])
 
   function handleNavigate(id) {
@@ -19,29 +20,22 @@ function Card({ id, name, username, onClick }) {
 
   return (
     <>
-      <div className={styles[theme]}>
-        <button onClick={onClick} className={`${isFav ? styles.like : null}`}>♥️</button>
-        <h4>{name}</h4>
+      <article className={`${styles.card} ${styles[theme]}`}>
+        <button
+          onClick={onAddToFavs}
+          className={`${styles.like_btn} ${isFav && styles.liked}`}
+        >
+          ♥️
+        </button>
+        <h3>{name}</h3>
         <p>@{username.toLowerCase()}</p>
-        <button onClick={() => handleNavigate(id)}>Detalle</button>
-      </div>
-
-      {/* <section className={styles.section}>
-          {props.data.map((dentist) => (
-            <div key={dentist.id} className={styles[theme]}>
-              {props.onRouteFavs ? (
-                <button onClick={() => handleFav(dentist)}>❌</button>
-              ) : (
-                <button onClick={() => handleFav(dentist)}>♥️</button>
-              )}
-              <h4>{dentist.name}</h4>
-              <p>@{dentist.username.toLowerCase()}</p>
-              <button onClick={() => handleNavigate(dentist.id)}>
-                Detalle
-              </button>
-            </div>
-          ))}
-        </section> */}
+        <button
+          onClick={() => handleNavigate(id)}
+          className={styles.detail_btn}
+        >
+          Detalle
+        </button>
+      </article>
     </>
   )
 }

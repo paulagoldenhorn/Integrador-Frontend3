@@ -1,35 +1,42 @@
-.light {
-    background-color:aliceblue;
+.navbar {
     display: flex;
     font-size: 20px;
-    gap: 15px;
-    justify-content: center;
     align-items: center;
     position: relative;
     padding: 10px;
+    justify-content: space-around;
 }
-
-.light a {
-    color: black;
+.navbar div {
+    display: flex;
+    gap: 15px;
+}
+.navbar a {
     text-decoration: none;
 }
+.navbar a:hover {
+    color: slateblue;
+}
 
-a:hover {
-    color: slateblue
+.light {
+    background-color:aliceblue;
+}
+.light a {
+    color: black;
 }
 
 .dark {
     background-color: rgb(17, 18, 34);
-    display: flex;
-    font-size: 20px;
-    gap: 15px;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    padding: 10px;
 }
-
 .dark a {
     color: white;
-    text-decoration: none;
+}
+
+button {
+    border-radius: 8px;
+    border: 1px solid;
+    padding: 0.3em 0.5em;
+    font-size: 1em;
+    background-color: blueviolet;
+    cursor: pointer;
+    color: white;
 }

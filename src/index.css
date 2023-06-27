@@ -13,12 +13,22 @@ input {
   text-align: left;
 }
 
+.section {
+  display: grid;
+  grid-template-columns: repeat(3, 240px);
+  grid-gap: 32px;
+  position: relative;
+  z-index: 1;
+  justify-content: center;
+  margin: 10px;
+  text-align: center;
+}
+
 .light {
   background-color: white;
   color: black;
 }
-
 .dark {
-background-color: black;
-color: white;
+  background-color: black;
+  color: white;
 }

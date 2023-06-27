@@ -4,9 +4,7 @@ Examen Final de Frontend III
 # Solucionar
 
 ### LOGICA
-- useReducer ?
-### CSS
-- Mejorar inconsistencias, nombres y optimizar (hay duplicacion de codigo)
+- useReducer al form
 
 # Documentación
 
@@ -33,7 +31,7 @@ Contextos:
 
 Componentes:
 - ```ThemeContextProvider:``` obtiene el tema actual de la pagina y pone a disposicion un metodo para cambiarlo.
-- ```Navbar:``` barra de navegación. Contiene los Links que redirigen a las rutas correspondientes.
+- ```Navbar:``` barra de navegación. Contiene los Links que redirigen a las rutas correspondientes y un botón para alternar el tema.
 - ```Footer:``` pie de página.
 - ```Home:``` página principal. Obtiene datos de los dentistas a través del contexto ApiContext y renderiza una Card por cada dentista.
 - ```ApiContextProvider:``` obtiene datos de la API.
@@ -42,4 +40,4 @@ Componentes:
 - ```Contact:``` página de contacto. Renderiza ContactForm.
 - ```ContactForm:``` formulario de contacto. Muestra un formulario, captura los datos ingresados y renderiza mensajes de exito o error.
 - ```Favs:``` página de dentistas favoritos. Obtiene dentistas favoritos a través del contexto FavsLogicContext y renderiza una Card por cada dentista favorito.
-- ```FavsLogicContext:``` obtiene dentistas favoritos del Local Storage y pone a disposicion un metodo para agregar dentistas.
+- ```FavsLogicContext:``` obtiene dentistas favoritos del Local Storage y pone a disposicion un metodo para agregar/eliminar dentistas.

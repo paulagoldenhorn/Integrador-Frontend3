@@ -1,7 +1,7 @@
 import { useState, useReducer } from 'react'
+import './ContactForm.module.css'
 
 function ContactForm() {
-
   /*
   const [state, dispatch] = useReducer(reducer, initialArg, init);
   dispatch({ type: "tipoDeAccion", payload: "algunValor" });
@@ -47,20 +47,21 @@ function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} noValidate>
-      <label htmlFor='fullname'>Nombre completo: </label>
+      <label htmlFor='fullname'>Nombre completo</label>
       <input
         type='text'
+        name='fullname'
         value={fullname}
         onChange={(e) => setFullName(e.target.value)}
       />
-      <label htmlFor='email'>Correo: </label>
+      <label htmlFor='email'>Correo</label>
       <input
         type='email'
+        name='email'
         value={email}
         onChange={(e) => setEmail(e.target.value.toLocaleLowerCase())}
       />
       <button type='submit'>Contácteme</button>
-
       {error && <p>{error}</p>}
       {success && (
         <p>

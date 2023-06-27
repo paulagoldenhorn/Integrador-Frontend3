@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import './Detail.module.css'
 
 function Detail() {
   const params = useParams()
@@ -17,14 +18,25 @@ function Detail() {
 
   return (
     <main>
-      {apiData && (
-        <>
-          <h3>{apiData.name}</h3>
-          <p>Correo: {apiData.email}</p>
-          <p>Contacto: {apiData.phone}</p>
-          <p>Web: {apiData.website}</p>
-        </>
-      )}
+      <h1>Detalle del dentista</h1>
+      <section>
+        {apiData && (
+          <table>
+            <tr>
+              <th>Nombre</th>
+              <th>Correo</th>
+              <th>Teléfono</th>
+              <th>Web</th>
+            </tr>
+            <tr>
+              <th>{apiData.name}</th>
+              <th>{apiData.email}</th>
+              <th>{apiData.phone}</th>
+              <th><a href="#">{apiData.website}</a></th>
+            </tr>
+          </table>
+        )}
+      </section>
     </main>
   )
 }
