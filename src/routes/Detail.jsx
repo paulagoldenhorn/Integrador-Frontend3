@@ -32,7 +32,9 @@ function Detail() {
               <th>{apiData.name}</th>
               <th>{apiData.email}</th>
               <th>{apiData.phone}</th>
-              <th><a href="#">{apiData.website}</a></th>
+              <th>
+                <a href='#'>{apiData.website}</a>
+              </th>
             </tr>
           </table>
         )}

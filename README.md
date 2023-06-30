@@ -1,11 +1,5 @@
 # Integrador-Frontend3
 Examen Final de Frontend III
-
-# Solucionar
-
-### LOGICA
-- useReducer al form
-
 # Documentación
 
 Rutas:

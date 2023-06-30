@@ -1,20 +1,7 @@
-import { useState, useReducer } from 'react'
+import { useState } from 'react'
 import styles from './ContactForm.module.css'
 
 function ContactForm() {
-  /*
-  const [state, dispatch] = useReducer(reducer, initialArg, init);
-  dispatch({ type: "tipoDeAccion", payload: "algunValor" });
-  switch (action.type) {
-    case 'fullname':
-    return {count: e.target.value};
-    case 'decrement':
-    return {count: state.count - 1};
-    default:
-    throw new Error();
-  
-  onClick={() => dispatch({type: 'fullname'})}
-*/
   const [fullname, setFullName] = useState('')
   const [email, setEmail] = useState('')
   const [error, setError] = useState('')
@@ -65,8 +52,8 @@ function ContactForm() {
       {error && <p className={styles.error}>{error}</p>}
       {success && (
         <p className={styles.success}>
-          Gracias <span>{success.fullname}</span>
-          , te escribiremos a la dirección {success.email}
+          Gracias <span>{success.fullname}</span>, te escribiremos a la
+          dirección {success.email}
         </p>
       )}
     </form>

@@ -3,9 +3,8 @@ import { createContext, useState, useEffect } from 'react'
 export const ApiContext = createContext({})
 
 export const ApiContextProvider = (props) => {
-  const endpoint = 'https://jsonplaceholder.typicode.com/users'
-
   const [apiData, setApiData] = useState([])
+  const endpoint = 'https://jsonplaceholder.typicode.com/users'
 
   async function fetchApiData() {
     const response = await (await fetch(endpoint)).json()

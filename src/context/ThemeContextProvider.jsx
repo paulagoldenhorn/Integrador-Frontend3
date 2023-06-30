@@ -17,14 +17,14 @@ export const ThemeContextProvider = (props) => {
 
   const value = {
     theme,
-    changeTheme
+    changeTheme,
   }
 
   return (
     <ThemeContext.Provider value={value}>
-        <div className={theme}>
-            {props.children}
-        </div>
+      <div className={theme}>
+        {props.children}
+      </div>
     </ThemeContext.Provider>
   )
 }
